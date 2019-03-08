@@ -1,0 +1,24 @@
+<div class="row border m-2 p-2" *ngFor="let product of products; index as i">
+  <div class="col">
+    <div>
+      <!-- <i class="fab fa-product-hunt"></i> -->
+      <a [routerLink]="['/products', i]"> {{ product.name }} </a>
+    </div>
+    <!-- <input [(ngModel)]="product.name"> -->
+    <div *ngIf="product.coupon" [title]="product.coupon + '%'">
+      {{ product.coupon }} % off
+      <span (click)="greatDeal(product)">?</span>
+    </div>
+  </div>
+  <div class="col">
+    <app-comparison
+      [product]="product"
+      (interest)="logInterest($event)"
+    ></app-comparison>
+  </div>
+  <div class="col-text-right">
+    <button class="btn btn-primary" (click)="cartService.add(product)">
+      Buy
+    </button>
+  </div>
+</div>
