@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 export interface IProduct {
   name: string;
@@ -51,6 +52,7 @@ export const products = [
 export class ProductListComponent implements OnInit {
   public cartService: CartService;
   products: IProduct[] = products;
+  faAngleRight = faAngleRight;
 
   constructor(cartService: CartService) {
     this.cartService = cartService;

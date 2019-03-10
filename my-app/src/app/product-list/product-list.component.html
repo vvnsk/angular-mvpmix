@@ -1,7 +1,7 @@
 <div class="row border m-2 p-2" *ngFor="let product of products; index as i">
   <div class="col">
     <div>
-      <!-- <i class="fab fa-product-hunt"></i> -->
+      <fa-icon [icon]="faAngleRight"></fa-icon>
       <a [routerLink]="['/products', i]"> {{ product.name }} </a>
     </div>
     <!-- <input [(ngModel)]="product.name"> -->
